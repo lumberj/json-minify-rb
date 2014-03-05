@@ -1,6 +1,6 @@
 # JsonMinify
 
-[![Gem Version](https://badge.fury.io/rb/unicorn_metrics.png)](http://badge.fury.io/rb/unicorn_metrics)
+[![Gem Version](https://badge.fury.io/rb/json_minify.png)](http://badge.fury.io/rb/json_minify)
 
 
 JSON.minify implementation - rationale is here: https://github.com/getify/JSON.minify
