@@ -32,8 +32,8 @@ end
 opt_parser.parse!
 if (input = ARGF.read)
   if options[:pretty]
-    puts JsonMinify.minify_pretty(input)
+    puts MultiJson.dump(MultiJson.load(input, minify: true), pretty: true)
   else
-    puts JsonMinify.minify(input)
+    puts MultiJson.minify(input)
   end
 end

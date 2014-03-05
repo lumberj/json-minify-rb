@@ -3,6 +3,7 @@ require 'multi_json'
 require "json_minify/version"
 
 module JsonMinify
+
   def minify(str)
     ss, buf = StringScanner.new(str), ''
 
@@ -41,20 +42,13 @@ module JsonMinify
     end
     buf
   end
-
-  def minify_parse(buf)
-    MultiJson.load(minify(buf))
-  end
-
-  def minify_pretty(buf)
-    MultiJson.dump(minify_parse(buf), pretty: true)
-  end
 end
 
-MultiJson.class_eval do
+MultiJson.module_eval do
   extend JsonMinify
-end
 
-JsonMinify.class_eval do
-  extend self
+  def self.load(string, options={})
+    options.fetch(:minify, false) && string = minify(string)
+    super(string, options)
+  end
 end
