@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+require 'json_minify'
+
+# Trap interrupts to quit cleanly. See
+# https://twitter.com/mitchellh/status/283014103189053442
+Signal.trap('INT') { abort }
+
+require 'pp'
+require 'optparse'
+options = {}
+
+opt_parser = OptionParser.new do |opt|
+  opt.banner = "Usage: json_minify.rb Filename [OPTIONS]"
+  opt.separator ""
+  opt.separator "Options"
+
+  opt.on("-p", "--pretty-print", "pretty print the JSON output") do
+    options[:pretty] = true
+  end
+
+  opt.on_tail("-v", "--version") do
+    puts JsonMinify::VERSION
+    exit
+  end
+
+  opt.on_tail("-h", "--help", "print this help text") do
+    puts opt_parser
+    exit
+  end
+end
+
+opt_parser.parse!
+if (input = ARGF.read)
+  if options[:pretty]
+    puts JsonMinify.minify_pretty(input)
+  else
+    puts JsonMinify.minify(input)
+  end
+end

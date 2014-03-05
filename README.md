@@ -14,7 +14,7 @@ JSON.minify implementation - rationale is here: https://github.com/getify/JSON.m
 
 Add this line to your application's Gemfile:
 
-    gem 'json-minify'
+    gem 'json_minify'
 
 And then execute:
 
@@ -22,20 +22,30 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install json-minify
+    $ gem install json_minify
 
 ## Usage
 
-API is compatible with JSON.minify in the npm node-json-minify package.
+Use with MultiJson,
 
-    JSON.minify("{ }") #=> "{}"
+    MultiJson.minify("{ }") #=> "{}"
 
-    JSON.minify("{ /* comment */ }") #=> "{}"
+    MultiJson.minify("{ /* comment */ }") #=> "{}"
 
+
+Use on the command-line:
+
+    $ cat file.json | json_minify
+
+    $ json_minify file.json
+    $ json_minify file.json --pretty-print
+
+    $ json_minify --help
+    $ json_minify --version
 
 ## Contributing
 
-1. Fork it ( http://github.com/geoffyoungs/json-minify-rb/fork )
+1. Fork it (https://github.com/lumberj/json-minify-rb)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
