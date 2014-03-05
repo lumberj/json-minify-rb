@@ -1,5 +1,8 @@
 # JsonMinify
 
+[![Gem Version](https://badge.fury.io/rb/unicorn_metrics.png)](http://badge.fury.io/rb/unicorn_metrics)
+
+
 JSON.minify implementation - rationale is here: https://github.com/getify/JSON.minify
 
 > Though comments are not officially part of the JSON standard, this post from
