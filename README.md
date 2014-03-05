@@ -1,4 +1,4 @@
-# JSON::Minify
+# JsonMinify
 
 JSON.minify implementation - rationale is here: https://github.com/getify/JSON.minify
 
