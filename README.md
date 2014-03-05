@@ -36,6 +36,11 @@ Use with MultiJson,
     MultiJson.minify("{ /* comment */ }") #=> "{}"
 
 
+    MultiJson.load("{ }", minify: true) #=> {}
+
+    MultiJson.load("{ /* comment */ }", minify: true) #=> {}
+
+
 Use on the command-line:
 
     $ cat file.json | json_minify
