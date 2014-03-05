@@ -7,12 +7,12 @@ Gem::Specification.new do |spec|
   spec.name          = "json_minify"
   spec.version       = JsonMinify::VERSION
   spec.authors       = ["Geoff Youngs, Alan Cohen"]
-  spec.email         = ["git@intersect-uk.co.uk"]
+  spec.email         = ["git@intersect-uk.co.uk", "acohen@climate.com"]
   spec.summary       = %q{JSON.minify implementation}
   spec.description   = %q{Pre-parser for JSON that removes C/C++ style comments
                           and whitespace from formatted JSON, similar to
                           https://github.com/getify/JSON.minify.}
-  spec.homepage      = "http://github.com/geoffyoungs/json-minify-rb"
+  spec.homepage      = "http://github.com/lumberj/json-minify-rb"
   spec.license       = "MIT"
 
   spec.files         = Dir['lib/**/*.rb'] + Dir['spec/*']+ Dir['bin/*.rb']
